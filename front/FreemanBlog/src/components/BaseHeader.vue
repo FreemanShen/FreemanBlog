@@ -75,12 +75,12 @@ export default{
       menuMode:'horizontal',
       screenWidth:document.documentElement.clientWidth,
       //移动端和桌面端布局变化
-      criticalVal:500,
+      criticalVal:this.GLOBAL.MOBILEVAL,
       //导航栏不再变动
-      fixedVal:880,
+      fixedVal:this.GLOBAL.FIXEDVAL,
       headerStyle:{
         //@为什么这里不写width,就会有bug?
-        width:'100%'
+        //width:'100%'
       },
       headerLogoStyle:{
 
@@ -92,7 +92,8 @@ export default{
 
       },
       headerLogoCol:{
-        'header-logo-col-hide':false
+        'header-logo-col-hide':false,
+        'header-logo-col-bgc':true
       },
       headerMenuCol:{
         'w-100':false
@@ -110,21 +111,21 @@ export default{
         this.headerLogoCol['header-logo-col-hide'] = false
         this.headerMenuCol['w-100'] = false
         this.headerLoginCol['w-100'] = false
-        this.headerStyle.width='100%'
+        //this.headerStyle.width='100%'
 
       }else if(this.screenWidth>this.criticalVal){
         this.menuMode='horizontal'
         this.headerLogoCol['header-logo-col-hide'] = false
         this.headerMenuCol['w-100'] = false
         this.headerLoginCol['w-100'] = false
-        this.headerStyle.width='880px'
+        //this.headerStyle.width='880px'
 
       }else{
         this.menuMode='vertical'
         this.headerLogoCol['header-logo-col-hide'] = true
         this.headerMenuCol['w-100'] = true
         this.headerLoginCol['w-100'] = true
-        this.headerStyle.width='100%'
+        //this.headerStyle.width='100%'
       }
     }
   },
@@ -146,11 +147,15 @@ export default{
 </script>
 
 <style scoped>
+.header-logo-col-bgc{
+  background: #ffffff;
+}
 .el-header{
 
   padding-left: 0 !important;
   padding-right: 0 !important;
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 .header-logo-router{
   /*logo居中？ */

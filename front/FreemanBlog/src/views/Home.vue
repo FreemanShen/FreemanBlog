@@ -3,7 +3,9 @@
     <el-container direction="vertical">
       <base-header :activeIndex="activeIndex"></base-header>
       <router-view></router-view>
-      <base-footer></base-footer>
+
+
+      <!-- <base-footer></base-footer> -->
 
     </el-container>
   </div>

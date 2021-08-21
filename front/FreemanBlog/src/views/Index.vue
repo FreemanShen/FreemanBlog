@@ -1,19 +1,16 @@
 <template>
 <el-main v-title data-title="Freeman Index">
-  <el-container>
-    <el-main>
-      <article-scroll-page></article-scroll-page>
-    </el-main>
-    <!--
-    <el-aside>
-      <card-me></card-me>
-      <card-tag></card-tag>
-      <card-article></card-article>
-      <card-archive></card-archive>
-      <card-article></card-article>
-    </el-aside>
-    -->
-  </el-container>
+  <div class="index-main">
+    <article-scroll-page></article-scroll-page>
+  </div>
+  <div class="index-aside">
+    <card-me></card-me>
+    <card-tag></card-tag>
+    <card-article></card-article>
+    <card-archive></card-archive>
+    <card-article></card-article>
+  </div>
+
 </el-main>
 </template>
 <script>
@@ -34,3 +31,11 @@ export default{
   }
 }
 </script>
+<style scoped>
+.el-main{
+  display: flex;
+  align-items: flex-start;
+  margin-left:auto;
+  margin-right: auto;
+}
+</style>

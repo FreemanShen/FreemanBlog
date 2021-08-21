@@ -1,14 +1,7 @@
 <template>
-  <div id="app">
+  <div id="app" ref="app">
     <router-view/>
   </div>
-  <!-- <div id="app">
-    <h1>布局1</h1>
-  <el-container>
-    <el-header>Header</el-header>
-    <el-main>Main</el-main>
-  </el-container>
-  </div> -->
 </template>
 
 <script>
@@ -17,15 +10,46 @@ import HelloWorld from './components/HelloWorld'
 export default {
   name: 'App',
   components: {
+  },
+  mounted () {
+    window.addEventListener('load',this.updateBodyWidth)
+    window.addEventListener('resize',this.updateBodyWidth)
+},
+  methods:{
+    updateBodyWidth(){
+      this.screenWidth = document.documentElement.clientWidth
+      if(this.screenWidth>this.GLOBAL.FIXEDVAL){
+        this.$refs.app.style.width = "100%";
+      }else if(this.screenWidth>this.GLOBAL.MOBILEVAL){
+        this.$refs.app.style.width ='880px'
+
+      }else{
+        this.$refs.app.style.width = "100%";
+      }
+    }
   }
 }
 </script>
 
 <style>
-
   #app{
-    text-align: center;
+    /*text-align: center;*/
+    font-family:"-apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei,sans-serif";
+
   }
+
+  html{
+    height: 100%;
+  }
+  body{
+    position: relative;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #f6f6f6;
+  }
+
+
   .clearfix{
     clear: both;
   }
@@ -51,6 +75,8 @@ export default {
       margin-left: 0 !important;
    }
   }
-
+  .box-shadow{
+      box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  }
 
 </style>

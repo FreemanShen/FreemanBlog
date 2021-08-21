@@ -7,8 +7,12 @@ import lodash from 'lodash'
 import ElementUI from 'element-ui'
 import App from '@/App'
 import 'element-ui/lib/theme-chalk/index.css'
+import "./assets/icon/iconfont.css"
+import "./assets/color/color.css"
+import global_ from "./global/Global"
 
 Vue.config.productionTip = false
+Vue.prototype.GLOBAL = global_
 Vue.use(ElementUI)
 
 Vue.directive('title',(el,binding)=>{

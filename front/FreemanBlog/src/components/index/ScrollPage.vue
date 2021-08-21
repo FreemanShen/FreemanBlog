@@ -28,3 +28,10 @@ export default{
   }
 }
 </script>
+<style scoped>
+
+#scroll-page{
+  width: var(--article-card-wd-lg);
+  /*margin:0 auto;*/
+}
+</style>
