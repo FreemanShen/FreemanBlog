@@ -38,4 +38,7 @@ export default{
   margin-left:auto;
   margin-right: auto;
 }
+.index-aside{
+  margin-left: 20px;
+}
 </style>

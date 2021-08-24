@@ -1,5 +1,5 @@
 <template>
-<el-card shadow="always" class="box-shadow">
+<el-card class="box-shadow">
   <div class="article-header">
     <a href="javascript:void(0);" class="item_title">{{title}}</a>
     <div class="float-right view-comment-block">
@@ -22,10 +22,12 @@
   <!--author.nickname t.tagname createDate-->
   <div class="article-footer">
 
-    <span class="author-nickname">{{author.nickname}}</span>
+    <span class="author-nickname">
+      <i class="el-icon-user"></i>&nbsp;{{author.nickname}}
+    </span>
     <!-- <el-tag v-for="t in tags" :key="t.tagname" size="mini" type="success">{{t.tagname}}</el-tag> -->
-    <tag v-for="t in tags" :key="t.tagname" :val="t.tagname"></tag>
-    <span class="float-right">
+    <tag v-for="t in tags" :key="t" :val="t" class="tags"></tag>
+    <span class="float-right create-date">
       <i class="el-icon-time"></i>&nbsp;{{createDate}}
     </span>
   </div>
@@ -49,12 +51,20 @@ export default{
   },
   mounted(){
     //console.log(PRIMARY);
+  },
+  components:{
+    tag
   }
 }
 </script>
 
 <style scoped>
-
+.tags{
+  margin-right:5px;
+}
+.tags:first-of-type{
+  margin-left: 5px;
+}
 .view-comment-block span:hover{
   cursor: pointer;
   color: #909399;
@@ -91,6 +101,8 @@ export default{
 .el-card{
   background: #ffffff;
   color: #121212;
+  border-radius: 4px;
+  line-height: 1.67;
 }
 
 
@@ -120,8 +132,17 @@ a:hover{
   font-weight: 500;
   color: var(--author-dark);
   cursor: pointer;
+
 }
 .author-nickname:hover{
   color: var(--my-hover-dark);
+}
+.create-date{
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  color: #8590a6;
+  margin-top:5px;
+
 }
 </style>

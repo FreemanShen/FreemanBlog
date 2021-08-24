@@ -1,13 +1,13 @@
 <template>
 <div ref="scroll" id="scroll-page" style="overflow:hidden">
   <slot></slot>
-  <div
+  <!-- <div
     style="height: 40px;margin-top: 10px;z-index: 1"
     v-loading="loading"
     element-loading-text="拼命加载中"
     element-loading-spinner="el-icon-loading"
     element-loading-background="rgb(255,255,255)"
-  ></div>
+  ></div> -->
 </div>
 </template>
 <script>

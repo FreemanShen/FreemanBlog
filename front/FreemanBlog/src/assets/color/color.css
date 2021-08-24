@@ -58,8 +58,12 @@
 }
 :root{
   --my-hover-dark:#646464;
+  --primary:#409eff;
   --author-dark:#444444;
   --article-card-wd-lg:700px;
   --article-card-wd-md:500px;
   --article-card-wd-sm:400px;
+
+  --card-me-lg:300px;
+
 }

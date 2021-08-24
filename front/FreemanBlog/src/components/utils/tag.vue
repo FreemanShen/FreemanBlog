@@ -23,5 +23,9 @@ div{
   height: 30px;
   line-height: 30px;
   background-color: rgba(0,102,255,.1);
+  cursor: pointer;
+}
+div:hover{
+  background-color: rgba(0,102,255,.15);
 }
 </style>

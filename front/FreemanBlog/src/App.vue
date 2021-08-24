@@ -32,12 +32,6 @@ export default {
 </script>
 
 <style>
-  #app{
-    /*text-align: center;*/
-    font-family:"-apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei,sans-serif";
-
-  }
-
   html{
     height: 100%;
   }
@@ -47,7 +41,14 @@ export default {
     margin: 0;
     padding: 0;
     background: #f6f6f6;
-  }
+
+    font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei,sans-serif;
+    font-size: 15px;
+    color: #121212;
+
+    box-sizing: border-box;
+
+}
 
 
   .clearfix{
