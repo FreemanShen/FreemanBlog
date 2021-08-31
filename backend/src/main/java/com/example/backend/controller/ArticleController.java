@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Date;
 import java.util.List;
 
 import com.alibaba.fastjson.JSON;
@@ -18,6 +19,7 @@ public class ArticleController {
     @GetMapping("/article")
     public String article(){
         List<Article> articleList = articleService.getAllArticle();
+        System.out.println(new Date()+"detecting");
         return JSON.toJSONString(articleList);
     }
 }

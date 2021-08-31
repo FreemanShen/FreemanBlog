@@ -1,14 +1,43 @@
 package com.example.backend.model;
 
 
+import java.util.List;
+
 public class Article {
     private Integer id;
+    private Object author;
+    public List<String> tags;
     private Integer weight;
     private String title;
+
+    public Object getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Object author) {
+        this.author = author;
+    }
+
+    public List<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<String> tags) {
+        this.tags = tags;
+    }
+
+    public String getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(String createDate) {
+        this.createDate = createDate;
+    }
+
     private Integer commentCounts;
     private Integer viewCounts;
     private String summary;
-
+    private String createDate;
     public Integer getId() {
         return id;
     }

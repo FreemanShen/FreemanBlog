@@ -30,7 +30,7 @@ var article=[
     tags:['大英雄','爱国诗人'],
     createDate:'2021-8-19'
   },
-    {
+  {
     id:2,
     weight:0,
     title:'滕王阁序',
@@ -58,7 +58,12 @@ export default{
     //@Todo:获取文章。。。
   },
   mounted(){
-    console.log(article);
+    //console.log(article);
+    this.api.article.getArticleData().then(response =>{
+      console.log("response: "+response.data);
+      this.articles = response.data
+      console.log(this.articles);
+    })
   }
 }
 </script>

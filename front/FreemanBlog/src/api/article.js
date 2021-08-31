@@ -1,77 +1,23 @@
-import request from '@/request'
-
-
-export function getArticles(query, page) {
-  return request({
-    url: '/articles',
-    method: 'get',
-    params: {
-      pageNumber: page.pageNumber,
-      pageSize: page.pageSize,
-      name: page.name,
-      sort: page.sort,
-      year: query.year,
-      month: query.month,
-      tagId: query.tagId,
-      categoryId: query.categoryId
-    }
-  })
+import base from './base' // 导入接口域名列表
+import axios from '@/request/http' // 导入http中创建的axios实例
+import qs from 'qs'
+// 根据筛选条件，发送筛选请求给后端
+const article = {
+  getArticleData () {
+    return axios.get('http://localhost:8081/article')
+  },
+  getArticleDataByGet (url, params) {
+    // 获取数据
+    console.log('getArticleDataByGet Running')
+    return axios.get(url, {
+      params: params
+    })
+  },
+  getArticleDataByPost (url, params) {
+    // 获取数据
+    console.log('getArticleDataByPost Running')
+    return axios.post(url, qs.stringify(params))
+  }
 }
 
-export function getHotArtices() {
-  return request({
-    url: '/articles/hot',
-    method: 'get'
-  })
-}
-
-export function getNewArtices() {
-  return request({
-    url: '/articles/new',
-    method: 'get'
-  })
-}
-
-export function viewArticle(id) {
-  return request({
-    url: `/articles/view/${id}`,
-    method: 'get'
-  })
-}
-
-export function getArticlesByCategory(id) {
-  return request({
-    url: `/articles/category/${id}`,
-    method: 'get'
-  })
-}
-
-export function getArticlesByTag(id) {
-  return request({
-    url: `/articles/tag/${id}`,
-    method: 'get'
-  })
-}
-
-
-export function publishArticle(article) {
-  return request({
-    url: '/articles/publish',
-    method: 'post',
-    data: article
-  })
-}
-
-export function listArchives() {
-  return request({
-    url: '/articles/listArchives',
-    method: 'get'
-  })
-}
-
-export function getArticleById(id) {
-  return request({
-    url: `/articles/${id}`,
-    method: 'get'
-  })
-}
+export default article

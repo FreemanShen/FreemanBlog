@@ -10,9 +10,11 @@ import 'element-ui/lib/theme-chalk/index.css'
 import "./assets/icon/iconfont.css"
 import "./assets/color/color.css"
 import global_ from "./global/Global"
+import api from '@/api'
 
 Vue.config.productionTip = false
 Vue.prototype.GLOBAL = global_
+Vue.prototype.api = api
 Vue.use(ElementUI)
 
 Vue.directive('title',(el,binding)=>{
